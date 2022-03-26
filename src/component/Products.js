@@ -15,20 +15,21 @@ export default function Products() {
         const getProducts = async () => {
             setLoading(true)
             const responce = await fetch("https://fakestoreapi.com/products")
-            if (componentMounted) {
+            // if (componentMounted) {
                 setData(await responce.clone().json());
                 setFilter(await responce.json());
                 setLoading(false);
-                console.log(filter)
-            }
-            return () => {
-                componentMounted = false
-            }
+               
+            // }
+            // return () => {
+                
+            //     componentMounted = false
+            // }
 
         }
 
         getProducts();
-    }, [])
+    },[])
 
     const Loading = () => {
         return (
@@ -42,7 +43,6 @@ export default function Products() {
         setFilter(updatedList);
     }
 
-    console.log(data, "<---------")
     const ShowProducts = () => {
         return (
             <>

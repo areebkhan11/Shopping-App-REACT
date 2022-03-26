@@ -10,7 +10,6 @@ export default function handleCart (state = initialstate , action) {
         case "ADDCART" :
             //Check if product is already exist
             const exists = state.find((val) => val.id === product.id)
-            console.log(exists, "state")
             if(exists){
                 //Increase the Quantity
                 return state.map((val)=> val.id === product.id ? {...val, qty: val.qty + 1 } : val
@@ -36,7 +35,6 @@ export default function handleCart (state = initialstate , action) {
                     val.id === product.id ? {...val, qty : val.qty - 1} : val
                 )
             }
-
             break;
 
         
