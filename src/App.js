@@ -15,10 +15,7 @@ function App() {
         <Route exact path='/products' element={<Products />} />
         <Route exact path='/products/:id' element={<Product />} />
         <Route exact path='/cart' element={<Cart />} />
-        
-        
-        
-      
+  
       </Routes>
     </div>
   );
